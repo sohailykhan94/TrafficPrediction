@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sliding_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    sothree:umanoPanelHeight="56dp"
+    sothree:umanoShadowHeight="1dp"
+    sothree:umanoParallaxOffset="584dp"
+    sothree:umanoDragView="@+id/dragView"
+    sothree:umanoOverlay="true"
+    sothree:umanoScrollableView="@+id/list">
+
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            tools:context=".SimpleDirectionActivity"
+            android:id="@+id/topLayout">
+
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            tools:context=".MapsActivity"
+            android:elevation="8dp"
+            android:layout_alignParentStart="false"
+            android:id="@+id/Toolbar"
+                android:background="#452544"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp">
+
+            <RelativeLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="16dp"
+                android:paddingRight="0dp"
+                android:paddingLeft="0dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentBottom="false"
+                    android:layout_alignParentTop="false"
+                    android:paddingRight="48dp"
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentStart="false"
+                    android:paddingLeft="48dp"
+                    android:id="@+id/holderToFrom">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/from"
+                        android:paddingLeft="16dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginTop="1dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="from"
+                            android:id="@+id/textView"
+                            android:gravity="center_vertical"
+                            android:textColor="#5AFFFFFF" />
+
+                        <AutoCompleteTextView
+                            android:id="@+id/autocomplete_places"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="14sp"
+                            android:singleLine="true"
+                            android:textColor="#fff"
+                            android:textColorHighlight="#fff"
+                            android:textColorHint="#fff"
+                            android:textColorLink="#fff"
+                            android:backgroundTint="#00999999"
+                            android:layout_gravity="center_horizontal"
+                            android:paddingLeft="8dp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:id="@+id/imageView2"
+                        android:layout_below="@+id/from"
+                        android:background="@drawable/line" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="false"
+                        android:layout_alignParentEnd="false"
+                        android:layout_below="@+id/from"
+                        android:id="@+id/to"
+                        android:paddingLeft="16dp"
+                        android:layout_marginTop="3dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="to"
+                            android:id="@+id/textView2"
+                            android:gravity="center_vertical"
+                            android:textColor="#5AFFFFFF"
+                            android:textAlignment="gravity"
+                            android:password="false"
+                            android:paddingTop="2dp" />
+
+                        <AutoCompleteTextView
+                            android:id="@+id/autocomplete_places_to"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="14sp"
+                            android:singleLine="true"
+                            android:textColor="#fff"
+                            android:textColorHighlight="#fff"
+                            android:textColorHint="#fff"
+                            android:textColorLink="#fff"
+                            android:backgroundTint="#00999999"
+                            android:layout_gravity="center_horizontal"
+                            android:paddingLeft="8dp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentEnd="false"
+                    android:layout_below="@+id/holderToFrom"
+                    android:id="@+id/linearLayout"
+                    android:paddingLeft="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:weightSum="2"
+                    android:layout_marginTop="4dp">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="150dp"
+                        android:weightSum="1"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="date"
+                            android:id="@+id/textView3"
+                            android:gravity="center_vertical"
+                            android:textColor="#5AFFFFFF"
+                            android:textAlignment="gravity"
+                            android:password="false"
+                            android:onClick="showDatePickerDialog" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/date"
+                            android:textSize="14sp"
+                            android:layout_weight="1"
+                            android:textColor="#fff"
+                            android:paddingLeft="8dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="150dp"
+                        android:weightSum="1"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="time"
+                            android:id="@+id/textViewTime"
+                            android:gravity="center_vertical"
+                            android:textColor="#5AFFFFFF"
+                            android:textAlignment="gravity"
+                            android:password="false"
+                            android:onClick="showTimePickerDialog" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/time"
+                            android:layout_weight="1"
+                            android:textSize="14sp"
+                            android:textColor="#fff"
+                            android:paddingLeft="8dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/imageView"
+                    android:src="@drawable/divider"
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginLeft="8dp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="GET ROUTE"
+                    android:id="@+id/getRoute"
+                    android:onClick="requestClick"
+                    android:nestedScrollingEnabled="false"
+                    android:backgroundTint="#5D315C"
+                    android:textColor="#fff"
+                    android:layout_below="@+id/linearLayout" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/upButton"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="right"
+                    android:src="@drawable/ic_expand_less_24dp"
+                    android:onClick="hideToolbar"
+                    android:backgroundTint="@color/transparent"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+
+            </LinearLayout>
+
+            <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MapsActivity"
+            android:layout_alignParentStart="false"
+                android:layout_alignParentTop="false" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/downButton"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="right"
+                android:layout_margin="16dp"
+                android:backgroundTint="#fff"
+                android:src="@drawable/ic_expand_more_24dp1"
+                android:onClick="showToolbar" />
+
+        </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="false"
+        android:id="@+id/dragView"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:paddingLeft="16dp"
+                android:paddingTop="10dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="8dp"
+                android:id="@+id/descr">
+
+                <TextView
+                    android:id="@+id/timeMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:textColor="@color/black"
+                    android:gravity="center_vertical"
+                    android:text="TRAVEL TIME" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="21 MINUTES"
+                    android:id="@+id/timeHolder"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="8dp"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etSearch"
+            android:hint="Search"
+            android:textCursorDrawable="@drawable/cursor_color"
+            android:textColor="#333"
+            android:backgroundTint="@color/background_material_light"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:elevation="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp" />
+
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+        </ListView>
+    </LinearLayout>
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
